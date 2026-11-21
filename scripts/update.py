@@ -33,7 +33,7 @@ readme = f'''<p align="center">
 </p>
 
 <p align="center">
-  <b>1-bit handheld games for the Arduboy, by Jay Chugstein.</b><br>
+  <b>Handheld games for the Arduboy, by Jay Chugstein.</b><br>
   Tap a game to play it right in your browser. Most popular first.
 </p>
 
