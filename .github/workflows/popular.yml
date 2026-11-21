@@ -1,0 +1,26 @@
+name: Sort games by popularity
+
+on:
+  schedule:
+    - cron: "17 9 * * *"     # once a day
+  workflow_dispatch:          # and whenever you press "Run workflow"
+
+permissions:
+  contents: write
+
+jobs:
+  sort:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Put the most downloaded games first
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 scripts/update.py
+      - name: Save the page if the order changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898699+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --cached --quiet || git commit -m "Games sorted by popularity"
+          git push
