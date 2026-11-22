@@ -4,7 +4,7 @@
 
 <p align="center">
   <b>Handheld games for the Arduboy, by Jay Chugstein.</b><br>
-  Tap a game to play it right in your browser. Most popular first.
+  Tap a game to play it right in your browser!
 </p>
 
 <p align="center">
